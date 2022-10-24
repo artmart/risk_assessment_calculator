@@ -1,5 +1,7 @@
 <?php 
 //use Yii;
+
+use frontend\models\Links;
 ini_set('memory_limit', '512M');
 ini_set('max_execution_time', 300);
 $capacity_for_risk = [];
@@ -319,8 +321,8 @@ $sql = "INSERT INTO results (
 
 $link->date_completed = date("Y-m-d h:i:s");
 $link->status = 'Completed';
-//$link->capacity
-//$link->overal_risk_score
+$link->capacity = $rc_text;
+$link->overal_risk_score = $recomendation_text;
 $link->save();
 
 

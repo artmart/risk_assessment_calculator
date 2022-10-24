@@ -109,7 +109,10 @@ $clients_completed = 0;
                 'attribute' => 'status',
                 'filter'=>['Pending', 'Completed'],
                 'format' => 'raw',
-                //'value'=>  function($data) {return ($data->user_group==1)?'Administrator':'User';}, 
+                'value'=>  function($data) {
+                        $arr_values = ['Pending'=>'alert-warning', 'Completed'=>'alert-primary'];
+                        return  '<div class="alert '.$arr_values[$data->status].' mb-0 p-1" role="alert">'.$data->status.'</div>';                      
+                    }, 
             ],
             'date_completed',
             //'link',

@@ -60,11 +60,13 @@ function init_sidebar() {
             footerHeight = $BODY.hasClass('footer_fixed') ? -10 : $FOOTER.height(),
             leftColHeight = $LEFT_COL.eq(1).height() + $SIDEBAR_FOOTER.height(),
             contentHeight = bodyHeight < leftColHeight ? leftColHeight : bodyHeight;
+			leftColHeighAdjust = bodyHeight < leftColHeight ? bodyHeight : contentHeight+10;
 
         // normalize content
         contentHeight -= $NAV_MENU.height() + footerHeight;
 
         $RIGHT_COL.css('min-height', contentHeight);
+		$LEFT_COL.css('min-height', leftColHeighAdjust);
     };
 
     var openUpMenu = function () {

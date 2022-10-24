@@ -1,3 +1,17 @@
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  color: #42606a;
+}
+
+
+.progress {
+  background-color: #30bc99;
+}
+
+.btn-primary {
+  background-color: #30bc99;
+  border-color: #30bc99;
+}
+
 .page-container {
 	/*display: -webkit-box;*/
 	display: -ms-flexbox;

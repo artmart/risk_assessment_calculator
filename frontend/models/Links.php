@@ -40,8 +40,8 @@ class Links extends \yii\db\ActiveRecord
             [['user_id'], 'integer'],
             [['date_submited', 'date_completed'], 'safe'],
             [['email', 'client_name'], 'string', 'max' => 255],
-            //[['capacity', 'overal_risk_score'], 'string', 'max' => 50],
-            [['capacity', 'overal_risk_score'], 'number'],
+            [['capacity', 'overal_risk_score'], 'string', 'max' => 50],
+           // [['capacity', 'overal_risk_score'], 'number'],
             [['status'], 'string', 'max' => 10],
         ];
     }
@@ -58,7 +58,7 @@ class Links extends \yii\db\ActiveRecord
             'client_name' => 'Client Name',
             'status' => 'Status',
             'capacity' => 'Capacity',
-            'overal_risk_score' => 'Overal Risk Score',
+            'overal_risk_score' => 'Overall Risk Score',
             'date_submited' => 'Date Submited',
             'date_completed' => 'Date Completed',
         ];

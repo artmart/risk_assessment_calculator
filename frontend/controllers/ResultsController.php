@@ -23,15 +23,15 @@ class ResultsController extends Controller
             [
                 'access' => [
                     'class' => AccessControl::className(),
-                    'only' => ['calculate', 'show', 'index'],
+                    'only' => ['calculate', 'show'],
                     'rules' => [
                         [
-                            'actions' => ['calculate1'],
+                            'actions' => ['calculate', 'show'],
                             'allow' => true,
                             'roles' => ['?'],
                         ],
                         [
-                            'actions' => ['logout', 'calculate', 'show', 'index'],
+                            'actions' => ['logout', 'index', 'calculate', 'show'],
                             'allow' => true,
                             'roles' => ['@'],
                         ],

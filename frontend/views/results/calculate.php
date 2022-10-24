@@ -136,7 +136,7 @@ if(isset($_REQUEST['l'])){$l = $_REQUEST['l']; }
   </div>
     
 <h4>Your Liabilities</h4>
-<em>Pleaseprovide details of any liabilities you may have</em>
+<em>Please provide details of any liabilities you may have</em>
 <hr />
   <div class="form-group row">
     <label for="mortgages" class="col-6 col-form-label">Mortgages</label> 

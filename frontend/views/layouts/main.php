@@ -3,8 +3,8 @@ use common\widgets\Alert;
 use frontend\assets\AppAsset;
 use yii\bootstrap4\Breadcrumbs;
 use yii\bootstrap4\Html;
-use yii\bootstrap4\Nav;
-use yii\bootstrap4\NavBar;
+//use yii\bootstrap4\Nav;
+//use yii\bootstrap4\NavBar;
 
 AppAsset::register($this);
 ?>
@@ -18,7 +18,7 @@ AppAsset::register($this);
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
 </head>
-<body class="d-flex flex-column h-100 nav-md">
+<body class="nav-md">
 <?php $this->beginBody() ?>
 
 <header>
@@ -95,7 +95,15 @@ AppAsset::register($this);
     </div>
 </footer>
 
-*/ ?>
+*/ 
+
+$user_group = 0;
+if(!Yii::$app->user->isGuest) {
+$user_group = Yii::$app->user->identity->user_group; 
+}
+
+
+?>
 
 
     <div class="container body">
@@ -112,15 +120,22 @@ AppAsset::register($this);
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
                 <ul class="nav side-menu">
+                <!--
                   <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="/">Home</a></li>
                       <li><a href="/site/about">About</a></li>
                     </ul>
                   </li>
+                  -->
+                  <li><a href="/"><i class="fa fa-home"></i> Home</a></li>
                   <li><a href="/results/calculate" target="_blank"><i class="fa fa-laptop"></i> View Calculator</a></li>
                   <li><a href="#"><i class="fa fa-question"></i> Support</a></li>
                   <li><a href="#"><i class="fa fa-gear"></i> Settings</a></li>
+                  
+<?php if($user_group==1){?>                  
+                  <li><a href="/user"><i class="fa fa-user"></i> Users</a></li>
+<?php } ?>                   
                   
                   
                   <!--
@@ -219,6 +234,9 @@ AppAsset::register($this);
 
             </div>
             <!-- /sidebar menu -->
+            
+            
+            
           </div>
         </div>
 
@@ -232,18 +250,27 @@ AppAsset::register($this);
               <ul class=" navbar-right">
                 <li class="nav-item dropdown open" style="padding-left: 15px;">
                   <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                  <?php echo Yii::$app->user->identity->firstname . ' ' . Yii::$app->user->identity->lastname;?>
-                    <img src="/img/user.png" alt="">
+                  <?php 
+                    echo Yii::$app->user->identity->firstname . ' ' . Yii::$app->user->identity->lastname;                       
+            		$file = Yii::getAlias('@frontend/web/uploads/') . Yii::$app->user->identity->profile_photo;
+                    
+                    $screen_path = '/uploads/'.Yii::$app->user->identity->profile_photo;
+            		if (file_exists($file) && Yii::$app->user->identity->profile_photo){
+           			  echo Html::img($screen_path, ['width' => '200px', 'alt3'=> Yii::$app->user->identity->firstname]);
+            		}else{ ?>
+          		    <img src="/img/user.png" alt="">
+            		<?php } ?>                    
                   </a>
                   <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
-                    <!--
-                    <a class="dropdown-item"  href="javascript:;"> Profile</a>
-                      <a class="dropdown-item"  href="javascript:;">
+                   
+                    <a class="dropdown-item"  href="/user/view?id=<?=Yii::$app->user->identity->id?>">My Profile</a>
+                     <!--  <a class="dropdown-item"  href="javascript:;">
                         <span class="badge bg-red pull-right">50%</span>
                         <span>Settings</span>
                       </a>
                     <a class="dropdown-item"  href="javascript:;">Help</a>
                     -->
+                   
                     <?php 
                     echo '<a class="dropdown-item">'
                         . Html::beginForm(['/site/logout'], 'post', ['class' => 'form-inline'])

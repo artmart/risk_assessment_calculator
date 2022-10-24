@@ -97,8 +97,8 @@ class LinksController extends Controller
         if ($this->request->isPost) {
             if ($model->load($this->request->post())) {
                 $model->status = 'Pending';
-                $model->capacity = 0;
-                $model->overal_risk_score = 0;
+                $model->capacity = '';
+                $model->overal_risk_score = '';
                 $user_id = $model->user_id;
          
             //'date_submited' => 'Date Submited',
@@ -118,14 +118,18 @@ class LinksController extends Controller
                 $body = 'Dear Sir or Madam <br /><br /> 
                         You have been invited to complete a risk profiling assessment. This should take no longer than 10 minutes to complete and can be accessed via smartphone, tablet or PC.
                         <br /><br />
-                        Please find your unique access link below: <br />'.   
-                        Html::a('Risk Profiling Assessment', [Url::to(['results/calculate'], true), 'u'=>$user_id, 'l'=>$link_id]).' <br /><br />Many thanks';
+                        Please find your unique access link below: <br />
+                         <a href="'.Url::to(['results/calculate?u='.$user_id.'&l='.$link_id], true).'">Risk Profiling Assessment</a> '.   
+                       // Html::a('Risk Profiling Assessment', [Url::to(['results/calculate'], true), 'u'=>$user_id, 'l'=>$link_id]).
+                        ' <br /><br />Many thanks';
  
         
                 if(Self::sendEmail($model->email, $subject, $body)) {
-                   echo '<div class="alert alert-success alert-dismissible "><button type="button" class="close" data-dismiss="alert">&times;</button>Your message sent successfully</div>';
+                    Yii::$app->session->setFlash('success', 'Your message sent successfully.');
+                   //return '<div class="alert alert-success alert-dismissible "><button type="button" class="close" data-dismiss="alert">&times;</button>Your message sent successfully</div>';
                 } else {
-                    echo '<div class="alert alert-warning alert-dismissible "><button type="button" class="close" data-dismiss="alert">&times;</button>There was an error sending your message. Please try again</div>';
+                    Yii::$app->session->setFlash('error', 'There was an error sending your message. Please try again.');
+                    //echo '<div class="alert alert-warning alert-dismissible "><button type="button" class="close" data-dismiss="alert">&times;</button>There was an error sending your message. Please try again</div>';
                 }
                      
                  
@@ -151,13 +155,46 @@ class LinksController extends Controller
     
     public function sendEmail($email, $subject, $body)
     {
-        return Yii::$app->mailer->compose()
+        return Yii::$app->mailer->compose('layouts/html', ['content'=>$body])
             ->setTo($email)
-            ->setFrom([$email => 'empire.poppinco.co'])
+            //->setFrom([$email => 'sales@poppinco.co'])
+            ->setFrom([Yii::$app->params['supportEmail'] => Yii::$app->params['senderName']])
             //->setReplyTo([$this->email => $this->name])
             ->setSubject($subject)
             //->setTextBody($body)
             ->setHtmlBody($body)
+            ->send();
+    }
+    
+    
+    public function sendEmail1()
+    {
+        /* @var $user User */
+        $user = User::findOne([
+            'status' => User::STATUS_ACTIVE,
+            'email' => $this->email,
+        ]);
+
+        if (!$user) {
+            return false;
+        }
+        
+        if (!User::isPasswordResetTokenValid($user->password_reset_token)) {
+            $user->generatePasswordResetToken();
+            if (!$user->save()) {
+                return false;
+            }
+        }
+
+        return Yii::$app
+            ->mailer
+            ->compose(
+                ['html' => 'passwordResetToken-html', 'text' => 'passwordResetToken-text'],
+                ['user' => $user]
+            )
+            ->setFrom([Yii::$app->params['supportEmail'] => Yii::$app->name . ' robot'])
+            ->setTo($this->email)
+            ->setSubject('Password reset for ' . Yii::$app->name)
             ->send();
     }
 
