@@ -131,10 +131,7 @@ class LinksController extends Controller
                     Yii::$app->session->setFlash('error', 'There was an error sending your message. Please try again.');
                     //echo '<div class="alert alert-warning alert-dismissible "><button type="button" class="close" data-dismiss="alert">&times;</button>There was an error sending your message. Please try again</div>';
                 }
-                     
-                 
-                 
-                    
+                      
                      return $this->redirect(['view', 'id' => $model->id]);
                 }else {
                     var_dump($model->errors);

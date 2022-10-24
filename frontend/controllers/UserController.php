@@ -187,9 +187,23 @@ class UserController extends Controller
      * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionDelete($id)
-    {               
-        $this->findModel($id)->delete();
-        return $this->redirect(['index']);
+    {   
+        $logout = true;
+        if(Yii::$app->user->identity->user_group==1 && Yii::$app->user->id!==$id){$logout = false;}
+        $user = $this->findModel($id);
+        
+        $photo_path = Yii::getAlias("@frontend/web/uploads") . DIRECTORY_SEPARATOR . $user->profile_photo;   
+        if($user->profile_photo && file_exists($photo_path)){unlink($photo_path);}
+                 
+        $user->delete();
+        
+        //$this->findModel($id)->delete();
+        if(!$logout){
+            return $this->redirect(['index']);
+            }else{
+                Yii::$app->user->logout();
+                return $this->goHome();
+            }
     }
 
     /**
