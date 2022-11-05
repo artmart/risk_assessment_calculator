@@ -19,14 +19,21 @@ AppAsset::register($this);
     <?php $this->head() ?>
 </head>
 <body class="d-flex flex-column h-100">
-<?php $this->beginBody() ?>
+<?php $this->beginBody();
 
-<main role="main" style="background-image: url('/img/login1.jpg'); 
+/*
+
+style="background-image: url('/img/login1.jpg'); 
   background-color: #cccccc; 
   height: 100%; 
   background-position: center; 
   background-repeat: no-repeat; 
-  background-size: cover;">
+  background-size: cover;"
+  */
+
+ ?>
+
+<main role="main">
     <div class="container">
         <?= $content ?>
     </div>

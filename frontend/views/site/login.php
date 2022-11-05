@@ -56,7 +56,7 @@ $this->title = 'Login';
 </div>
 
 <div class="col-lg-8">
- <!--   <p style="background-image: url('/img/login.jpg'); height: 500px; background-repeat: no-repeat; background-size: cover;">-->
+   <p style="background-image: url('/img/RS-login page background.png'); height: 500px; background-repeat: no-repeat; background-size: cover;">
 </div>
 </div>
 </div>
