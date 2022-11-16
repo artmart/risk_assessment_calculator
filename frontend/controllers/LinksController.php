@@ -155,7 +155,7 @@ class LinksController extends Controller
     public function sendEmail($email, $subject, $url)
     {
         \Yii::$app->mailer->htmlLayout = "layouts/html_invite";
-        return Yii::$app->mailer->compose('layouts/html_invite', ['url'=>$url])
+        return Yii::$app->mailer->compose('layouts/html_invite', ['content'=>$url])
             ->setTo($email)
             //->setFrom([$email => 'sales@poppinco.co'])
             ->setFrom([Yii::$app->params['supportEmail'] => Yii::$app->params['senderName']])
