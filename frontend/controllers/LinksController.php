@@ -115,7 +115,7 @@ class LinksController extends Controller
                 $model->save();
                             
                 $subject = 'Risk Profiling Assessment';
-                $body = Url::to(['results/calculate?u='.$user_id.'&l='.$link_id], true);  //linl
+                $url = Url::to(['results/calculate?u='.$user_id.'&l='.$link_id], true);  //linl
                 /*        
                 $body = 'Dear Sir or Madam <br /><br /> 
                         You have been invited to complete a risk profiling assessment. This should take no longer than 10 minutes to complete and can be accessed via smartphone, tablet or PC.
@@ -126,7 +126,7 @@ class LinksController extends Controller
                         ' <br /><br />Many thanks';
                 */
         
-                if(Self::sendEmail($model->email, $subject, $body)) {
+                if(Self::sendEmail($model->email, $subject, $url)) {
                     Yii::$app->session->setFlash('success', 'Your message sent successfully.');
                    //return '<div class="alert alert-success alert-dismissible "><button type="button" class="close" data-dismiss="alert">&times;</button>Your message sent successfully</div>';
                 } else {
@@ -152,10 +152,10 @@ class LinksController extends Controller
     
     
     
-    public function sendEmail($email, $subject, $body)
+    public function sendEmail($email, $subject, $url)
     {
         \Yii::$app->mailer->htmlLayout = "layouts/html_invite";
-        return Yii::$app->mailer->compose('', ['content'=>$body])
+        return Yii::$app->mailer->compose('layouts/html_invite', ['url'=>$url])
             ->setTo($email)
             //->setFrom([$email => 'sales@poppinco.co'])
             ->setFrom([Yii::$app->params['supportEmail'] => Yii::$app->params['senderName']])
