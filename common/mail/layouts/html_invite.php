@@ -146,7 +146,7 @@ table, td { color: #000000; } #u_body a { color: #cca250; text-decoration: none;
   <tr>
     <td style="padding-right: 0px;padding-left: 0px;" align="center">
       
-      <img align="center" border="0" src="/img/image-1.png" alt="Tick Icon" title="Tick Icon" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 59%;max-width: 342.2px;" width="342.2" class="v-src-width v-src-max-width"/>
+      <img align="center" border="0" src="<?= Url::to(['/img/image-1.png'], true); ?>" alt="Tick Icon" title="Tick Icon" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 59%;max-width: 342.2px;" width="342.2" class="v-src-width v-src-max-width"/>
       
     </td>
   </tr>
