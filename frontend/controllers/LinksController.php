@@ -162,7 +162,7 @@ class LinksController extends Controller
             //->setReplyTo([$this->email => $this->name])
             ->setSubject($subject)
             //->setTextBody($body)
-            ->setHtmlBody($body)
+            //->setHtmlBody($body)
             ->send();
     }
     
