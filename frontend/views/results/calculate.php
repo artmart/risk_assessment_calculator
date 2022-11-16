@@ -96,7 +96,7 @@ if(isset($_REQUEST['l'])){$l = $_REQUEST['l']; }
   </div>
     
 <h4>Your Assets</h4>
-<em>Pleaseprovide details of the combined value of yourassets</em>
+<em>Please provide details of the combined value of your assets</em>
 <hr />
   <div class="form-group row">
     <label for="cash_savings" class="col-6 col-form-label">Cash savings</label> 

@@ -115,6 +115,8 @@ class LinksController extends Controller
                 $model->save();
                             
                 $subject = 'Risk Profiling Assessment';
+                $body = Url::to(['results/calculate?u='.$user_id.'&l='.$link_id], true);  //linl
+                /*        
                 $body = 'Dear Sir or Madam <br /><br /> 
                         You have been invited to complete a risk profiling assessment. This should take no longer than 10 minutes to complete and can be accessed via smartphone, tablet or PC.
                         <br /><br />
@@ -122,7 +124,7 @@ class LinksController extends Controller
                          <a href="'.Url::to(['results/calculate?u='.$user_id.'&l='.$link_id], true).'">Risk Profiling Assessment</a> '.   
                        // Html::a('Risk Profiling Assessment', [Url::to(['results/calculate'], true), 'u'=>$user_id, 'l'=>$link_id]).
                         ' <br /><br />Many thanks';
- 
+                */
         
                 if(Self::sendEmail($model->email, $subject, $body)) {
                     Yii::$app->session->setFlash('success', 'Your message sent successfully.');
@@ -152,7 +154,7 @@ class LinksController extends Controller
     
     public function sendEmail($email, $subject, $body)
     {
-        return Yii::$app->mailer->compose('layouts/html', ['content'=>$body])
+        return Yii::$app->mailer->compose('layouts/html_invite', ['content'=>$body])
             ->setTo($email)
             //->setFrom([$email => 'sales@poppinco.co'])
             ->setFrom([Yii::$app->params['supportEmail'] => Yii::$app->params['senderName']])

@@ -52,7 +52,9 @@ $this->title = 'Login';
         
     </div>
     
-    <p style="font-size: xxx-large; font-family: initial;">Risk <span style="color: #30bc99;"><strong>Science</strong></span></p>
+    <!--<p style="font-size: xxx-large; font-family: initial;">Risk <span style="color: #30bc99;"><strong>Science</strong></span></p>-->
+    <img align="center" border="0" src="/img/image-1.png" alt="Tick Icon" title="Tick Icon" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 59%;max-width: 342.2px;" width="342.2" class="v-src-width v-src-max-width"/>
+      
 </div>
 
 <div class="col-lg-8">
