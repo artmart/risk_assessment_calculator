@@ -277,9 +277,9 @@ table, td { color: #000000; } #u_body a { color: #cca250; text-decoration: none;
       <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:'Montserrat',sans-serif;" align="left">
         
   <div style="color: #f1f8f5; line-height: 200%; text-align: left; word-wrap: break-word;">
-    <p style="font-size: 14px; line-height: 200%;"><span style="color: #f7e1b5; font-size: 14px; line-height: 28px;"><strong><span style="font-size: 14px; line-height: 28px;">?</span></strong>  </span>Accessible via a mobile phone, PC or tablet</p>
-<p style="font-size: 14px; line-height: 200%;"><span style="color: #f7e1b5; font-size: 14px; line-height: 28px;"><strong>?</strong></span>  Completely safe and secure</p>
-<p style="font-size: 14px; line-height: 200%;"><span style="color: #f7e1b5; font-size: 14px; line-height: 28px;">?</span>  Takes no more than 30 minutes</p>
+    <p style="font-size: 14px; line-height: 200%;"><span style="color: #f7e1b5; font-size: 14px; line-height: 28px;"><strong><span style="font-size: 14px; line-height: 28px;">âœ“</span></strong>Â Â </span>Accessible via a mobile phone, PC or tablet</p>
+<p style="font-size: 14px; line-height: 200%;"><span style="color: #f7e1b5; font-size: 14px; line-height: 28px;"><strong>âœ“</strong></span> Â Completely safe and secure</p>
+<p style="font-size: 14px; line-height: 200%;"><span style="color: #f7e1b5; font-size: 14px; line-height: 28px;">âœ“</span> Â Takes no more than 30 minutes</p>
   </div>
 
       </td>
@@ -440,7 +440,7 @@ table, td { color: #000000; } #u_body a { color: #cca250; text-decoration: none;
       <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:0px 10px 13px;font-family:'Montserrat',sans-serif;" align="left">
         
   <div style="color: #b0b1b4; line-height: 180%; text-align: center; word-wrap: break-word;">
-    <p style="font-size: 14px; line-height: 180%;">© 2022 All Rights Reserved</p>
+    <p style="font-size: 14px; line-height: 180%;">Â© 2022 All Rights Reserved</p>
   </div>
 
       </td>
