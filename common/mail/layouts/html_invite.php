@@ -1,4 +1,7 @@
-<?php use yii\helpers\Html; ?>
+<?php 
+use yii\helpers\Html;
+use yii\helpers\Url; 
+?>
 <?php $this->beginPage() ?>
 
 <?php /*
