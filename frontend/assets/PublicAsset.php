@@ -12,10 +12,7 @@ class PublicAsset extends AssetBundle
         //'vendor/font-awesome/css/font-awesome.min.css',
         //'vendor/iCheck/skins/flat/green.css',	
         //'build/css/custom.css',
-        
-
-        
-        
+         
     ];
     public $js = [
         //"vendor/bootstrap-progressbar/bootstrap-progressbar.min.js",
@@ -25,8 +22,7 @@ class PublicAsset extends AssetBundle
 
         "js/jquery.validate.min.js",
         "js/gauge.min.js",  
-        
-
+        //"js/popper.min.js",
     ];
     public $depends = [
         'yii\web\YiiAsset',

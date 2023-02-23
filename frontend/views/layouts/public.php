@@ -1,8 +1,4 @@
 <?php
-
-/** @var yii\web\View $this */
-/** @var string $content */
-
 use frontend\assets\PublicAsset;
 use yii\helpers\Html;
 

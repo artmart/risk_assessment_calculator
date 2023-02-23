@@ -6,16 +6,68 @@ if(isset($_REQUEST['u'])){$u = $_REQUEST['u']; }
 if(isset($_REQUEST['l'])){$l = $_REQUEST['l']; }
 
 ?>
+
+<style>
+.tooltip-inner {
+  color: #1c1515;
+  background-color: #ccc8c8;
+  border-radius: 0.5rem;
+}
+
+.tlt{
+    border-radius: 12.5px;
+    height: 20px;
+    padding-top: 0px;
+    width: 20px;
+    padding-left: 6px;
+    margin-top: -4px;
+}
+
+.termsbar{
+    background-color: #DEE8A3;
+}
+
+.checkmark{
+  /* Double-sized Checkboxes */
+  -ms-transform: scale(2); /* IE */
+  -moz-transform: scale(2); /* FF */
+  -webkit-transform: scale(2); /* Safari and Chrome */
+  -o-transform: scale(2); /* Opera */
+  transform: scale(4);
+  padding: 10px;
+  margin-top: 15px;
+  margin-bottom: 17px;
+  margin-right: 30px;
+}
+</style>
 <!-- Entries Column -->
 <br /><br />
 <h1>Risk assessment calculator</h1>  
+
 
 <div class="progress progress-striped active">
     <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
 </div>
 <br />
-<div class="page-container">                
 <form class="form" id="form_id">
+
+<div class="page-container termsbar">  
+<div class="row">
+<div class="col-lg-9">
+Before you continue, please tick this box to confirm your agreement with our 
+ <a href="https://riskscience.co/terms.html" target="_blank">Privacy Policy</a> and  
+ <a href="https://riskscience.co/terms.html" target="_blank">Terms of Use</a>.
+
+</div> 
+<div class="col-lg-3">
+<input type="checkbox" id="agreement" name="agreement" value="1" class="float-right pr-10 checkmark" required> 
+</div>
+</div>
+</div>
+
+<br />
+<div class="page-container">                
+
 
 <div id="1">
 <h2>Background and financial situation</h2>
@@ -50,7 +102,9 @@ if(isset($_REQUEST['l'])){$l = $_REQUEST['l']; }
     </div>
   </div>
   <div class="form-group row">
-    <label for="number_of_dependents" class="col-6 col-form-label">Number of dependents</label> 
+    <label for="number_of_dependents" class="col-6 col-form-label">Number of dependents
+    <button type="button" class="btn btn-sm btn-outline-info tlt" data-toggle="tooltip" data-placement="top" data-trigger="click" title="Number of people who are financially dependent on you">?</button>
+    </label> 
     <div class="col-6">
       <select id="number_of_dependents" name="number_of_dependents" class="form-control">
         <option value="1">0</option>
@@ -65,25 +119,33 @@ if(isset($_REQUEST['l'])){$l = $_REQUEST['l']; }
 <em>Please provide details of your total annual income</em>
 <hr />
   <div class="form-group row">
-    <label for="employment_income" class="col-6 col-form-label">Employment income</label> 
+    <label for="employment_income" class="col-6 col-form-label">Employment income
+    <button type="button" class="btn btn-sm btn-outline-info tlt" data-toggle="tooltip" data-placement="top" data-trigger="click" title="Income received from any and all employment">?</button>
+    </label> 
     <div class="col-6">
       <input id="employment_income" name="employment_income" type="text" class="form-control">
     </div>
   </div>
   <div class="form-group row">
-    <label for="pension_income" class="col-6 col-form-label">Pension income</label> 
+    <label for="pension_income" class="col-6 col-form-label">Pension income
+    <button type="button" class="btn btn-sm btn-outline-info tlt" data-toggle="tooltip" data-placement="top" data-trigger="click" title="Income received from your pension. If you are not yet drawing anything from your pension please enter 0">?</button>
+    </label> 
     <div class="col-6">
       <input id="pension_income" name="pension_income" type="text" class="form-control">
     </div>
   </div>
   <div class="form-group row">
-    <label for="investment_income" class="col-6 col-form-label">Investment Income</label> 
+    <label for="investment_income" class="col-6 col-form-label">Investment Income
+    <button type="button" class="btn btn-sm btn-outline-info tlt" data-toggle="tooltip" data-placement="top" data-trigger="click" title="Any income you receive from existing investment portfolios">?</button>
+    </label> 
     <div class="col-6">
       <input id="investment_income" name="investment_income" type="text" class="form-control">
     </div>
   </div>
   <div class="form-group row">
-    <label for="other_income" class="col-6 col-form-label">Other income</label> 
+    <label for="other_income" class="col-6 col-form-label">Other income
+    <button type="button" class="btn btn-sm btn-outline-info tlt" data-toggle="tooltip" data-placement="top" data-trigger="click" title="Any other income not included above">?</button>
+    </label> 
     <div class="col-6">
       <input id="other_income" name="other_income" type="text" class="form-control">
     </div>
@@ -99,37 +161,49 @@ if(isset($_REQUEST['l'])){$l = $_REQUEST['l']; }
 <em>Please provide details of the combined value of your assets</em>
 <hr />
   <div class="form-group row">
-    <label for="cash_savings" class="col-6 col-form-label">Cash savings</label> 
+    <label for="cash_savings" class="col-6 col-form-label">Cash savings
+    <button type="button" class="btn btn-sm btn-outline-info tlt" data-toggle="tooltip" data-placement="top" data-trigger="click" title="Total balance of all cash and cash equivalents such as premium bonds and savings bonds">?</button>
+    </label> 
     <div class="col-6">
       <input id="cash_savings" name="cash_savings" type="text" class="form-control">
     </div>
   </div>
   <div class="form-group row">
-    <label for="pensions_including_sipps" class="col-6 col-form-label">Pensions (including SIPPs)</label> 
+    <label for="pensions_including_sipps" class="col-6 col-form-label">Pensions (including SIPPs)
+    <button type="button" class="btn btn-sm btn-outline-info tlt" data-toggle="tooltip" data-placement="top" data-trigger="click" title="Total value of all private and workplace pensions">?</button>
+    </label> 
     <div class="col-6">
       <input id="pensions_including_sipps" name="pensions_including_sipps" type="text" class="form-control">
     </div>
   </div>
   <div class="form-group row">
-    <label for="property_including_investment_properties" class="col-6 col-form-label">Property (including investment properties)</label> 
+    <label for="property_including_investment_properties" class="col-6 col-form-label">Property (including investment properties)
+    <button type="button" class="btn btn-sm btn-outline-info tlt" data-toggle="tooltip" data-placement="top" data-trigger="click" title="Approximate market value of all properties you own. We will account for any outstanding mortgage lending later so please just include the total market value for now. Please also use this box to record any business assets where appropriate.">?</button>
+    </label> 
     <div class="col-6">
       <input id="property_including_investment_properties" name="property_including_investment_properties" type="text" class="form-control">
     </div>
   </div>
   <div class="form-group row">
-    <label for="investment_portfolios" class="col-6 col-form-label">Investment Portfolios</label> 
+    <label for="investment_portfolios" class="col-6 col-form-label">Investment Portfolios
+    <button type="button" class="btn btn-sm btn-outline-info tlt" data-toggle="tooltip" data-placement="top" data-trigger="click" title="Please include any existing investment portfolios, ISAs, workplace share schemes.">?</button>
+    </label> 
     <div class="col-6">
       <input id="investment_portfolios" name="investment_portfolios" type="text" class="form-control">
     </div>
   </div>
   <div class="form-group row">
-    <label for="total_assets" class="col-6 col-form-label"><strong>TOTAL ASSETS</strong></label> 
+    <label for="total_assets" class="col-6 col-form-label"><strong>TOTAL ASSETS</strong>
+    <button type="button" class="btn btn-sm btn-outline-info tlt" data-toggle="tooltip" data-placement="top" data-trigger="click" title="Total value of your assets">?</button>
+    </label> 
     <div class="col-6">
       <input id="total_assets" name="total_assets" type="text" class="form-control" disabled="disabled">
     </div>
   </div>
   <div class="form-group row">
-    <label for="total_liquid_assets" class="col-6 col-form-label"><strong>TOTAL LIQUID ASSETS</strong></label> 
+    <label for="total_liquid_assets" class="col-6 col-form-label"><strong>TOTAL LIQUID ASSETS</strong>
+    <button type="button" class="btn btn-sm btn-outline-info tlt" data-toggle="tooltip" data-placement="top" data-trigger="click" title="Total value of assets that are already liquid or could be liquidated to cash fairly quickly.">?</button>
+    </label> 
     <div class="col-6">
       <input id="total_liquid_assets" name="total_liquid_assets" type="text" class="form-control" readonly="readonly">
     </div>
@@ -139,13 +213,17 @@ if(isset($_REQUEST['l'])){$l = $_REQUEST['l']; }
 <em>Please provide details of any liabilities you may have</em>
 <hr />
   <div class="form-group row">
-    <label for="mortgages" class="col-6 col-form-label">Mortgages</label> 
+    <label for="mortgages" class="col-6 col-form-label">Mortgages
+    <button type="button" class="btn btn-sm btn-outline-info tlt" data-toggle="tooltip" data-placement="top" data-trigger="click" title="Total value of all outstanding mortgage lending on all properties that you own">?</button>
+    </label> 
     <div class="col-6">
       <input id="mortgages" name="mortgages" type="text" class="form-control">
     </div>
   </div>
   <div class="form-group row">
-    <label for="other_secured_loans" class="col-6 col-form-label">Other secured loans</label> 
+    <label for="other_secured_loans" class="col-6 col-form-label">Other secured loans
+    <button type="button" class="btn btn-sm btn-outline-info tlt" data-toggle="tooltip" data-placement="top" data-trigger="click" title="Any other lending secured against any of your assets">?</button>
+    </label> 
     <div class="col-6">
       <input id="other_secured_loans" name="other_secured_loans" type="text" class="form-control">
     </div>
@@ -157,7 +235,9 @@ if(isset($_REQUEST['l'])){$l = $_REQUEST['l']; }
     </div>
   </div>
   <div class="form-group row">
-    <label for="other_unsecured_loans" class="col-6 col-form-label">Other unsecured loans</label> 
+    <label for="other_unsecured_loans" class="col-6 col-form-label">Other unsecured loans
+    <button type="button" class="btn btn-sm btn-outline-info tlt" data-toggle="tooltip" data-placement="top" data-trigger="click" title="May include any overdrafts you are using">?</button>
+    </label> 
     <div class="col-6">
       <input id="other_unsecured_loans" name="other_unsecured_loans" type="text" class="form-control">
     </div>
@@ -179,31 +259,41 @@ if(isset($_REQUEST['l'])){$l = $_REQUEST['l']; }
 <em>How much do you spend on the following each month?</em>
 <hr />
   <div class="form-group row">
-    <label for="rent_mortgage_payments" class="col-6 col-form-label">Rent/Mortgage payments</label> 
+    <label for="rent_mortgage_payments" class="col-6 col-form-label">Rent/Mortgage payments
+    <button type="button" class="btn btn-sm btn-outline-info tlt" data-toggle="tooltip" data-placement="top" data-trigger="click" title="Total amount you spend on your rent or mortgage payments each month">?</button>
+    </label> 
     <div class="col-6">
       <input id="rent_mortgage_payments" name="rent_mortgage_payments" type="text" class="form-control" required>
     </div>
   </div>
   <div class="form-group row">
-    <label for="utilities_electricity_water_internet_etc" class="col-6 col-form-label">Utilities (electricity, water, internet etc.)</label> 
+    <label for="utilities_electricity_water_internet_etc" class="col-6 col-form-label">Utilities (electricity, water, internet etc.)
+    <button type="button" class="btn btn-sm btn-outline-info tlt" data-toggle="tooltip" data-placement="top" data-trigger="click" title="Amount you spend on utilities each month">?</button>
+    </label> 
     <div class="col-6">
       <input id="utilities_electricity_water_internet_etc" name="utilities_electricity_water_internet_etc" type="text" class="form-control" required>
     </div>
   </div>
   <div class="form-group row">
-    <label for="food" class="col-6 col-form-label">Food</label> 
+    <label for="food" class="col-6 col-form-label">Food
+    <button type="button" class="btn btn-sm btn-outline-info tlt" data-toggle="tooltip" data-placement="top" data-trigger="click" title="Total amount spent on food and drink each month">?</button>
+    </label> 
     <div class="col-6">
       <input id="food" name="food" type="text" class="form-control" required>
     </div>
   </div>
   <div class="form-group row">
-    <label for="debt_repayment" class="col-6 col-form-label">Debt repayment</label> 
+    <label for="debt_repayment" class="col-6 col-form-label">Debt repayment
+    <button type="button" class="btn btn-sm btn-outline-info tlt" data-toggle="tooltip" data-placement="top" data-trigger="click" title="Amount spent on repaying debts each month (not including mortgages)">?</button>
+    </label> 
     <div class="col-6">
       <input id="debt_repayment" name="debt_repayment" type="text" class="form-control" required>
     </div>
   </div>
   <div class="form-group row">
-    <label for="other" class="col-6 col-form-label">Other</label> 
+    <label for="other" class="col-6 col-form-label">Other
+    <button type="button" class="btn btn-sm btn-outline-info tlt" data-toggle="tooltip" data-placement="top" data-trigger="click" title="Any other spend items not accounted for above">?</button>
+    </label> 
     <div class="col-6">
       <input id="other" name="other" type="text" class="form-control" required>
     </div>
@@ -365,7 +455,7 @@ if(isset($_REQUEST['l'])){$l = $_REQUEST['l']; }
 <input type="hidden" id="total_monthly_spend_hidden" name="total_monthly_spend_hidden" value="0">
 <input type="hidden" id="total_annual_spend_hidden" name="total_annual_spend_hidden" value="0">
 
-</form>
+
 
 <div id="3">
 
@@ -386,10 +476,16 @@ if(isset($_REQUEST['l'])){$l = $_REQUEST['l']; }
 </div>
 
 </div>
+</form>
 <br />
 
 
 <script>
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+
+
 $(document).ready(function () {
   $("#employment_income, #pension_income, #investment_income, #other_income").on('change',function(){
           var employment_income = $('#employment_income').val();
@@ -452,7 +548,18 @@ $(document).ready(function () {
 var valeur = 0;
 
 function secondpagecheck(){
-        if($("input:radio[name='q1']").is(":checked") &&
+    
+    /*
+    if($("#agreement").is(":checked")){
+        alert('checked');
+        }else{
+            alert('not checked');
+        }
+    **/
+    
+    
+        if($("#agreement").is(":checked") &&
+           $("input:radio[name='q1']").is(":checked") &&
            $("input:radio[name='q2']").is(":checked") &&
            $("input:radio[name='q3']").is(":checked") &&
            $("input:radio[name='q4']").is(":checked") &&
@@ -465,10 +572,11 @@ function secondpagecheck(){
            $("input:radio[name='q11']").is(":checked") &&
            $("input:radio[name='q12']").is(":checked") &&
            $("input:radio[name='q13']").is(":checked") &&
-           $("input:radio[name='q14']").is(":checked") ) { $("#fin").removeAttr('disabled');}
+           $("input:radio[name='q14']").is(":checked") ) { $("#fin").removeAttr('disabled'); }
 }
 
 $('#2, #3').hide();
+
 $("#fin").prop("disabled", true);
 $('input:radio').click(function(){
     secondpagecheck();
@@ -501,6 +609,7 @@ function nextQuestion(id){
 
             
             secondpagecheck();
+            
             }
             
         if(id==2){
@@ -509,7 +618,7 @@ function nextQuestion(id){
             }
         
         if(change_page){
-        //if(next == 2){secondpagecheck();}
+        if(id == 1){$('.termsbar').hide();}
         var val1 = 50;// 100/(2+childs*2);
         var valeur = (id-1)*val1 + val1; //  100/(2+childs*2);
         
