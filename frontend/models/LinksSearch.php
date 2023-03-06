@@ -17,8 +17,8 @@ class LinksSearch extends Links
     public function rules()
     {
         return [
-            [['id', 'user_id', 'status'], 'integer'],
-            [['email', 'client_name', 'capacity', 'overal_risk_score', 'date_submited', 'date_completed'], 'safe'],
+            [['id', 'user_id'], 'integer'],
+            [['email', 'client_name', 'capacity', 'overal_risk_score', 'date_submited', 'date_completed', 'status'], 'safe'],
         ];
     }
 
@@ -60,7 +60,7 @@ class LinksSearch extends Links
         $query->andFilterWhere([
             'id' => $this->id,
             'user_id' => $this->user_id,
-            'status' => $this->status,
+            'status' => $this->status, // ($this->status)? strip_tags($this->status):,
             'date_submited' => $this->date_submited,
             'date_completed' => $this->date_completed,
         ]);

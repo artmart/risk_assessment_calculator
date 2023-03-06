@@ -107,11 +107,11 @@ $clients_completed = 0;
             
             [
                 'attribute' => 'status',
-                'filter'=>['Pending', 'Completed'],
+                'filter'=>['Pending'=>'Pending', 'Completed'=>'Completed'],
                 'format' => 'raw',
                 'value'=>  function($data) {
                         $arr_values = ['Pending'=>'alert-warning', 'Completed'=>'alert-primary'];
-                        return  '<div class="alert '.$arr_values[$data->status].' mb-0 p-1" role="alert">'.$data->status.'</div>';                      
+                        return '<div class="alert '.$arr_values[$data->status].' mb-0 p-1" role="alert">'.$data->status.'</div>';                      
                     }, 
             ],
             'date_completed',

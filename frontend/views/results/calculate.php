@@ -123,7 +123,7 @@ Before you continue, please tick this box to confirm your agreement with our
     <button type="button" class="btn btn-sm btn-outline-info tlt" data-toggle="tooltip" data-placement="top" data-trigger="click" title="Income received from any and all employment">?</button>
     </label> 
     <div class="col-6">
-      <input id="employment_income" name="employment_income" type="text" class="form-control">
+      <input id="employment_income" name="employment_income" type="text"  class="form-control decimal">
     </div>
   </div>
   <div class="form-group row">
@@ -131,7 +131,7 @@ Before you continue, please tick this box to confirm your agreement with our
     <button type="button" class="btn btn-sm btn-outline-info tlt" data-toggle="tooltip" data-placement="top" data-trigger="click" title="Income received from your pension. If you are not yet drawing anything from your pension please enter 0">?</button>
     </label> 
     <div class="col-6">
-      <input id="pension_income" name="pension_income" type="text" class="form-control">
+      <input id="pension_income" name="pension_income" type="text" class="form-control decimal">
     </div>
   </div>
   <div class="form-group row">
@@ -139,7 +139,7 @@ Before you continue, please tick this box to confirm your agreement with our
     <button type="button" class="btn btn-sm btn-outline-info tlt" data-toggle="tooltip" data-placement="top" data-trigger="click" title="Any income you receive from existing investment portfolios">?</button>
     </label> 
     <div class="col-6">
-      <input id="investment_income" name="investment_income" type="text" class="form-control">
+      <input id="investment_income" name="investment_income" type="text" class="form-control decimal">
     </div>
   </div>
   <div class="form-group row">
@@ -147,7 +147,7 @@ Before you continue, please tick this box to confirm your agreement with our
     <button type="button" class="btn btn-sm btn-outline-info tlt" data-toggle="tooltip" data-placement="top" data-trigger="click" title="Any other income not included above">?</button>
     </label> 
     <div class="col-6">
-      <input id="other_income" name="other_income" type="text" class="form-control">
+      <input id="other_income" name="other_income" type="text" class="form-control decimal">
     </div>
   </div>
   <div class="form-group row">
@@ -165,7 +165,7 @@ Before you continue, please tick this box to confirm your agreement with our
     <button type="button" class="btn btn-sm btn-outline-info tlt" data-toggle="tooltip" data-placement="top" data-trigger="click" title="Total balance of all cash and cash equivalents such as premium bonds and savings bonds">?</button>
     </label> 
     <div class="col-6">
-      <input id="cash_savings" name="cash_savings" type="text" class="form-control">
+      <input id="cash_savings" name="cash_savings" type="text" class="form-control decimal">
     </div>
   </div>
   <div class="form-group row">
@@ -173,7 +173,7 @@ Before you continue, please tick this box to confirm your agreement with our
     <button type="button" class="btn btn-sm btn-outline-info tlt" data-toggle="tooltip" data-placement="top" data-trigger="click" title="Total value of all private and workplace pensions">?</button>
     </label> 
     <div class="col-6">
-      <input id="pensions_including_sipps" name="pensions_including_sipps" type="text" class="form-control">
+      <input id="pensions_including_sipps" name="pensions_including_sipps" type="text" class="form-control decimal">
     </div>
   </div>
   <div class="form-group row">
@@ -181,7 +181,7 @@ Before you continue, please tick this box to confirm your agreement with our
     <button type="button" class="btn btn-sm btn-outline-info tlt" data-toggle="tooltip" data-placement="top" data-trigger="click" title="Approximate market value of all properties you own. We will account for any outstanding mortgage lending later so please just include the total market value for now. Please also use this box to record any business assets where appropriate.">?</button>
     </label> 
     <div class="col-6">
-      <input id="property_including_investment_properties" name="property_including_investment_properties" type="text" class="form-control">
+      <input id="property_including_investment_properties" name="property_including_investment_properties" type="text" class="form-control decimal">
     </div>
   </div>
   <div class="form-group row">
@@ -189,7 +189,7 @@ Before you continue, please tick this box to confirm your agreement with our
     <button type="button" class="btn btn-sm btn-outline-info tlt" data-toggle="tooltip" data-placement="top" data-trigger="click" title="Please include any existing investment portfolios, ISAs, workplace share schemes.">?</button>
     </label> 
     <div class="col-6">
-      <input id="investment_portfolios" name="investment_portfolios" type="text" class="form-control">
+      <input id="investment_portfolios" name="investment_portfolios" type="text" class="form-control decimal">
     </div>
   </div>
   <div class="form-group row">
@@ -217,7 +217,7 @@ Before you continue, please tick this box to confirm your agreement with our
     <button type="button" class="btn btn-sm btn-outline-info tlt" data-toggle="tooltip" data-placement="top" data-trigger="click" title="Total value of all outstanding mortgage lending on all properties that you own">?</button>
     </label> 
     <div class="col-6">
-      <input id="mortgages" name="mortgages" type="text" class="form-control">
+      <input id="mortgages" name="mortgages" type="text" class="form-control decimal">
     </div>
   </div>
   <div class="form-group row">
@@ -225,13 +225,13 @@ Before you continue, please tick this box to confirm your agreement with our
     <button type="button" class="btn btn-sm btn-outline-info tlt" data-toggle="tooltip" data-placement="top" data-trigger="click" title="Any other lending secured against any of your assets">?</button>
     </label> 
     <div class="col-6">
-      <input id="other_secured_loans" name="other_secured_loans" type="text" class="form-control">
+      <input id="other_secured_loans" name="other_secured_loans" type="text" class="form-control decimal">
     </div>
   </div>
   <div class="form-group row">
     <label for="credit_card_debt" class="col-6 col-form-label">Credit Card debt</label> 
     <div class="col-6">
-      <input id="credit_card_debt" name="credit_card_debt" type="text" class="form-control">
+      <input id="credit_card_debt" name="credit_card_debt" type="text" class="form-control decimal">
     </div>
   </div>
   <div class="form-group row">
@@ -239,7 +239,7 @@ Before you continue, please tick this box to confirm your agreement with our
     <button type="button" class="btn btn-sm btn-outline-info tlt" data-toggle="tooltip" data-placement="top" data-trigger="click" title="May include any overdrafts you are using">?</button>
     </label> 
     <div class="col-6">
-      <input id="other_unsecured_loans" name="other_unsecured_loans" type="text" class="form-control">
+      <input id="other_unsecured_loans" name="other_unsecured_loans" type="text" class="form-control decimal">
     </div>
   </div>
   <div class="form-group row">
@@ -263,7 +263,7 @@ Before you continue, please tick this box to confirm your agreement with our
     <button type="button" class="btn btn-sm btn-outline-info tlt" data-toggle="tooltip" data-placement="top" data-trigger="click" title="Total amount you spend on your rent or mortgage payments each month">?</button>
     </label> 
     <div class="col-6">
-      <input id="rent_mortgage_payments" name="rent_mortgage_payments" type="text" class="form-control" required>
+      <input id="rent_mortgage_payments" name="rent_mortgage_payments" type="text" class="form-control decimal" required>
     </div>
   </div>
   <div class="form-group row">
@@ -271,7 +271,7 @@ Before you continue, please tick this box to confirm your agreement with our
     <button type="button" class="btn btn-sm btn-outline-info tlt" data-toggle="tooltip" data-placement="top" data-trigger="click" title="Amount you spend on utilities each month">?</button>
     </label> 
     <div class="col-6">
-      <input id="utilities_electricity_water_internet_etc" name="utilities_electricity_water_internet_etc" type="text" class="form-control" required>
+      <input id="utilities_electricity_water_internet_etc" name="utilities_electricity_water_internet_etc" type="text" class="form-control decimal" required>
     </div>
   </div>
   <div class="form-group row">
@@ -279,7 +279,7 @@ Before you continue, please tick this box to confirm your agreement with our
     <button type="button" class="btn btn-sm btn-outline-info tlt" data-toggle="tooltip" data-placement="top" data-trigger="click" title="Total amount spent on food and drink each month">?</button>
     </label> 
     <div class="col-6">
-      <input id="food" name="food" type="text" class="form-control" required>
+      <input id="food" name="food" type="text" class="form-control decimal" required>
     </div>
   </div>
   <div class="form-group row">
@@ -287,7 +287,7 @@ Before you continue, please tick this box to confirm your agreement with our
     <button type="button" class="btn btn-sm btn-outline-info tlt" data-toggle="tooltip" data-placement="top" data-trigger="click" title="Amount spent on repaying debts each month (not including mortgages)">?</button>
     </label> 
     <div class="col-6">
-      <input id="debt_repayment" name="debt_repayment" type="text" class="form-control" required>
+      <input id="debt_repayment" name="debt_repayment" type="text" class="form-control decimal" required>
     </div>
   </div>
   <div class="form-group row">
@@ -295,7 +295,7 @@ Before you continue, please tick this box to confirm your agreement with our
     <button type="button" class="btn btn-sm btn-outline-info tlt" data-toggle="tooltip" data-placement="top" data-trigger="click" title="Any other spend items not accounted for above">?</button>
     </label> 
     <div class="col-6">
-      <input id="other" name="other" type="text" class="form-control" required>
+      <input id="other" name="other" type="text" class="form-control decimal" required>
     </div>
   </div>
   <div class="form-group row">
@@ -481,6 +481,28 @@ Before you continue, please tick this box to confirm your agreement with our
 
 
 <script>
+
+    function addCommas(nStr) {
+        nStr += '';
+        var x = nStr.split('.');
+        var x1 = x[0];
+        var x2 = x.length > 1 ? '.' + x[1] : '';
+        var rgx = /(\d+)(\d{3})/;
+        while (rgx.test(x1)) {
+            x1 = x1.replace(rgx, '$1' + ',' + '$2');
+        }
+        formattedamount = x1 + x2
+        return formattedamount;
+    }
+$(document).on('keyup, change, input','.decimal',function() {    
+    var numcheck = $(this).val();
+        numcheck = numcheck.replace(/[^0-9\.]/, '');
+        numcheck = addCommas(numcheck);
+        $(this).val(numcheck);
+});
+
+
+
 $(function () {
   $('[data-toggle="tooltip"]').tooltip()
 })
@@ -492,8 +514,14 @@ $(document).ready(function () {
           var pension_income = $('#pension_income').val();
           var investment_income = $('#investment_income').val();
           var other_income = $('#other_income').val();
+          
+          employment_income = parseFloat(employment_income.replace(/[^0-9\.]/g, '')*1);
+          pension_income = parseFloat(pension_income.replace(/[^0-9\.]/g, '')*1);
+          investment_income = parseFloat(investment_income.replace(/[^0-9\.]/g, '')*1);
+          other_income = parseFloat(other_income.replace(/[^0-9\.]/g, '')*1);
+
           var total_income = employment_income*1 + pension_income*1 + investment_income*1 + other_income*1;
-          $('#total_income').val(total_income);
+          $('#total_income').val(addCommas(total_income));
           $('#total_income_hidden').val(total_income);
     })
     
@@ -503,11 +531,17 @@ $(document).ready(function () {
       var property_including_investment_properties = $('#property_including_investment_properties').val();
       var investment_portfolios = $('#investment_portfolios').val();
       
+      cash_savings = parseFloat(cash_savings.replace(/[^0-9\.]/g, '')*1);
+      pensions_including_sipps = parseFloat(pensions_including_sipps.replace(/[^0-9\.]/g, '')*1);
+      property_including_investment_properties = parseFloat(property_including_investment_properties.replace(/[^0-9\.]/g, '')*1);
+      investment_portfolios = parseFloat(investment_portfolios.replace(/[^0-9\.]/g, '')*1);
+  
+      
       var total_assets = cash_savings*1 + pensions_including_sipps*1 + property_including_investment_properties*1 + investment_portfolios*1;
-      $('#total_assets').val(total_assets);
+      $('#total_assets').val(addCommas(total_assets));
       $('#total_assets_hidden').val(total_assets);
       var total_liquid_assets = cash_savings*1 + pensions_including_sipps*1 + investment_portfolios*1;
-      $('#total_liquid_assets').val(total_liquid_assets);
+      $('#total_liquid_assets').val(addCommas(total_liquid_assets));
       $('#total_liquid_assets_hidden').val(total_liquid_assets);
     })
     
@@ -516,11 +550,17 @@ $(document).ready(function () {
           var other_secured_loans = $('#other_secured_loans').val();
           var credit_card_debt = $('#credit_card_debt').val();
           var other_unsecured_loans = $('#other_unsecured_loans').val();
+          
+          mortgages = parseFloat(mortgages.replace(/[^0-9\.]/g, '')*1);
+          other_secured_loans = parseFloat(other_secured_loans.replace(/[^0-9\.]/g, '')*1);
+          credit_card_debt = parseFloat(credit_card_debt.replace(/[^0-9\.]/g, '')*1);
+          other_unsecured_loans = parseFloat(other_unsecured_loans.replace(/[^0-9\.]/g, '')*1);          
+          
           var total_liabilities = mortgages*1 + other_secured_loans*1 + credit_card_debt*1 + other_unsecured_loans*1;
-          $('#total_liabilities').val(total_liabilities);
+          $('#total_liabilities').val(addCommas(total_liabilities));
           $('#total_liabilities_hidden').val(total_liabilities);
           var total_current_liabilities = credit_card_debt*1 + other_unsecured_loans*1;
-          $('#total_current_liabilities').val(total_current_liabilities);
+          $('#total_current_liabilities').val(addCommas(total_current_liabilities));
           $('#total_current_liabilities_hidden').val(total_current_liabilities);
     })
     
@@ -530,10 +570,17 @@ $(document).ready(function () {
           var food = $('#food').val();
           var debt_repayment = $('#debt_repayment').val();
           var other = $('#other').val(); 
+          
+          rent_mortgage_payments = parseFloat(rent_mortgage_payments.replace(/[^0-9\.]/g, '')*1);
+          utilities_electricity_water_internet_etc = parseFloat(utilities_electricity_water_internet_etc.replace(/[^0-9\.]/g, '')*1);
+          food = parseFloat(food.replace(/[^0-9\.]/g, '')*1);
+          debt_repayment = parseFloat(debt_repayment.replace(/[^0-9\.]/g, '')*1);          
+          other = parseFloat(other.replace(/[^0-9\.]/g, '')*1); 
+          
           var total_monthly_spend = rent_mortgage_payments*1 + utilities_electricity_water_internet_etc*1 + food*1 + debt_repayment*1 + other*1;
-          $('#total_monthly_spend').val(total_monthly_spend);
+          $('#total_monthly_spend').val(addCommas(total_monthly_spend));
           $('#total_monthly_spend_hidden').val(total_monthly_spend);
-          $('#total_annual_spend').val(total_monthly_spend*12);
+          $('#total_annual_spend').val(addCommas(total_monthly_spend*12));
           $('#total_annual_spend_hidden').val(total_monthly_spend*12);
     })
     
