@@ -55,7 +55,7 @@ if(isset($_REQUEST['l'])){$l = $_REQUEST['l']; }
 <div class="row">
 <div class="col-lg-9">
 Before you continue, please tick this box to confirm your agreement with our 
- <a href="https://riskscience.co/terms.html" target="_blank">Privacy Policy</a> and  
+ <a href="https://riskscience.co/privacypolicy" target="_blank">Privacy Policy</a> and  
  <a href="https://riskscience.co/terms.html" target="_blank">Terms of Use</a>.
 
 </div> 
