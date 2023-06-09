@@ -469,7 +469,21 @@ Before you continue, please tick this box to confirm your agreement with our
 
 <div class="clearfix"></div>
 <hr />
-<div class="btnGroup text-right bdtop">                              
+
+<!-- CANVG 
+<script src="/vendor/canvg/rgbcolor.js"></script>
+<script src="/vendor/canvg/StackBlur.js"></script>
+<script src="/vendor/canvg/canvg.js"></script>
+-->
+<script src="/vendor/jspdf/jspdf.min.js"></script>
+<!--<script src="/vendor/html2canvas/html2canvas.min.js"></script>
+<script src="/vendor/html2canvas/html2canvas.svg.min.js"></script>-->
+<script src="/vendor/dom-to-image/dom-to-image.min.js"></script>
+
+</script>
+<div class="btnGroup text-right bdtop">   
+<button onclick="pdf()" class="btn btn-primary">PDF</button>
+                         
         <button onclick= "previousQuestion(3)" class="btn btn-primary pull-left">Previous</button>
     <!--<button onclick= "nextQuestion(2)" class="btn btn-primary">Next</button>-->
 </div> 

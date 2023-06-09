@@ -1,6 +1,23 @@
-<?php 
-//use Yii;
+<style>
+#container2{
+    background: #fff;
+ 
+}
 
+.page-container{
+    background: #fff;
+    
+}
+
+body{
+	font-family: Verdana, Arial, Helvetica, sans-serif;;
+    background-color: #fff;
+}
+
+
+</style>
+
+<?php 
 use frontend\models\Links;
 ini_set('memory_limit', '512M');
 ini_set('max_execution_time', 300);
@@ -333,7 +350,74 @@ $link->save();
 }
 //var_dump($_REQUEST);
 ?>
+<!--
+<button id="download" class="btn btn-primary">PDF</button>
+<script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.7/dist/html2canvas.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jspdf-html2canvas@latest/dist/jspdf-html2canvas.min.js"></script>-->
+<script>
+
+
+//$('#download').click(function() 
+function pdf()
+{
+    var node = document.getElementById('container2');
+    var options = {
+        quality: 100,
+        width: 750,
+        hight: 700
+    };
+
+    domtoimage.toJpeg(node, options).then(function (dataUrl)
+    {
+        //var doc = new jsPDF();
+        //doc.addImage(dataUrl, 'JPEG', -18, 20, 240, 134.12);
+        //doc.save('Test.pdf');
+        
+        var doc = new jsPDF('p', 'pt', 'a4', true);
+            doc.setFillColor('#fff');
+            //var doc = new jsPDF();
+            //doc.fromHTML($('#pdf').get(0), 10, 10, {'width': 180});
+            
+    		doc.setFont("Verdana, Arial, Helvetica, sans-serif;");
+    		//doc.setFontSize(fontSize);
+            doc.addImage(dataUrl, 'JPEG', 40, 50, 500, 770);
+            doc.save('Report.pdf');
+    });
+} //)
+
+
+
+/*
+
+function pdf33(){
+      html2canvas($('#container2'), {
+             useCORS: true,
+             background: "#ffffff",
+             onrendered: function(canvas) {
+                 var myImage = canvas.toDataURL("image/jpeg,1.0");
+                 // Adjust width and height
+                 var imgWidth =  (canvas.width * 60) / 240;
+                 var imgHeight = (canvas.height * 70) / 240;
+                 // jspdf changes
+                 var pdf = new jsPDF('p', 'mm', 'a4');
+                 pdf.addImage(myImage, 'png', 15, 2, imgWidth, imgHeight); // 2: 19
+                 pdf.save('Report.pdf');
+             }
+         });
+    }
+*/
+</script>
+
+<div id="container2">
+<div class="row">
+<div class="col-md-7">
 <h1>Your results</h1>
+</div>
+<div class="col-md-5">
+<img align="center" border="0" src="/img/image-1.png" alt="Tick Icon" title="Tick Icon" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 59%;max-width: 342.2px;" width="342.2" class="v-src-width v-src-max-width"/>
+</div>
+</div>      
 <hr />
 <h2 class="pull-right" style="text-align: right;"><em><?= $full_name . ", " . date('jS F Y')?></em></h2>
 
@@ -494,7 +578,9 @@ market1.setTextField(textRenderer4);
 </div>
 
 <div class="row">
+<div class="col-md-12">
 <?=$overll_description?>
+</div>
 </div>
 </div>
 </div>
@@ -511,4 +597,9 @@ market1.setTextField(textRenderer4);
   </div>
     <p class="card-text"><?=$recomendation_description?></p>
   </div>
+</div>
+<div class="alert alert-warning" role="alert">
+These results are provided as a guide only and do not constitute financial advice.
+</div>
+<br />
 </div>

@@ -30,7 +30,7 @@ class SiteController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['logout', 'signup', 'index', 'calculate'],
+                'only' => ['logout', 'signup', 'index', 'calculate', 'support'],
                 'rules' => [
                     [
                         'actions' => ['signup'],
@@ -38,7 +38,7 @@ class SiteController extends Controller
                         'roles' => ['?'],
                     ],
                     [
-                        'actions' => ['logout', 'index'],
+                        'actions' => ['logout', 'index', 'support'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -147,6 +147,12 @@ class SiteController extends Controller
     {
         return $this->render('about');
     }
+    
+    public function actionSupport()
+    {
+        return $this->render('support');
+    }
+
 
     /**
      * Signs user up.

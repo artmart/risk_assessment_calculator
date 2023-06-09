@@ -130,7 +130,7 @@ $user_group = Yii::$app->user->identity->user_group;
                   -->
                   <li><a href="/"><i class="fa fa-home"></i> Home</a></li>
                   <li><a href="/results/calculate" target="_blank"><i class="fa fa-laptop"></i> View Calculator</a></li>
-                  <li><a href="#"><i class="fa fa-question"></i> Support</a></li>
+                  <li><a href="/site/support"><i class="fa fa-question"></i> Support</a></li>
                   <li><a href="#"><i class="fa fa-gear"></i> Settings</a></li>
                   
 <?php if($user_group==1){?>                  
