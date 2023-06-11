@@ -523,7 +523,7 @@ $(function () {
 
 
 $(document).ready(function () {
-  $("#employment_income, #pension_income, #investment_income, #other_income").on('change',function(){
+  $("#employment_income, #pension_income, #investment_income, #other_income").on('keyup touchend change',function(){
           var employment_income = $('#employment_income').val();
           var pension_income = $('#pension_income').val();
           var investment_income = $('#investment_income').val();
@@ -539,7 +539,7 @@ $(document).ready(function () {
           $('#total_income_hidden').val(total_income);
     })
     
-  $("#cash_savings, #pensions_including_sipps, #property_including_investment_properties, #investment_portfolios").on('change',function(){
+  $("#cash_savings, #pensions_including_sipps, #property_including_investment_properties, #investment_portfolios").on('keyup touchend change',function(){
       var cash_savings = $('#cash_savings').val();
       var pensions_including_sipps = $('#pensions_including_sipps').val();
       var property_including_investment_properties = $('#property_including_investment_properties').val();
@@ -559,7 +559,7 @@ $(document).ready(function () {
       $('#total_liquid_assets_hidden').val(total_liquid_assets);
     })
     
-  $("#mortgages, #other_secured_loans, #credit_card_debt, #other_unsecured_loans").on('change',function(){
+  $("#mortgages, #other_secured_loans, #credit_card_debt, #other_unsecured_loans").on('keyup touchend change',function(){
           var mortgages = $('#mortgages').val();
           var other_secured_loans = $('#other_secured_loans').val();
           var credit_card_debt = $('#credit_card_debt').val();
@@ -578,7 +578,7 @@ $(document).ready(function () {
           $('#total_current_liabilities_hidden').val(total_current_liabilities);
     })
     
-  $("#rent_mortgage_payments, #utilities_electricity_water_internet_etc, #food, #debt_repayment, #other").on('change',function(){
+  $("#rent_mortgage_payments, #utilities_electricity_water_internet_etc, #food, #debt_repayment, #other").on('keyup touchend change',function(){
           var rent_mortgage_payments = $('#rent_mortgage_payments').val();
           var utilities_electricity_water_internet_etc = $('#utilities_electricity_water_internet_etc').val();
           var food = $('#food').val();
