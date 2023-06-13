@@ -415,7 +415,7 @@ function pdf33(){
 <h1>Your results</h1>
 </div>
 <div class="col-md-5">
-<img align="center" border="0" src="/img/image-1.png" alt="Tick Icon" title="Tick Icon" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 59%;max-width: 342.2px;" width="342.2" class="v-src-width v-src-max-width"/>
+<img align="center" border="0" src="/img/image-1.png" alt="Tick Icon" title="Tick Icon" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 100%; margin-top: -20px;" class="v-src-width v-src-max-width"/>
 </div>
 </div>      
 <hr />
