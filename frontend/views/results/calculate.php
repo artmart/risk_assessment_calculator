@@ -510,7 +510,7 @@ Before you continue, please tick this box to confirm your agreement with our
     }
 $(document).on('keyup, change, input','.decimal',function() {    
     var numcheck = $(this).val();
-        numcheck = numcheck.replace(/[^0-9\.]/, '');
+        numcheck = numcheck.replace(/[^0-9\.]/g, '');
         numcheck = addCommas(numcheck);
         $(this).val(numcheck);
 });
